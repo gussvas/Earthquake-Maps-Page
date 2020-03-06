@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+  <style type="text/css">
+  html { height: 100% }
+  body { height: 75%; margin: 100; padding: 0 }
+  #map-canvas { height: 90% }
+  </style>
+  <script type="text/javascript"
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkc2KApVykF7PhcKcvK808cFzYaiGQJVY"></script>
+  <script type="text/javascript" src="quakes.js"></script>
+  <!-- Bootstrap core CSS -->
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkc2KApVykF7PhcKcvK808cFzYaiGQJVY&callback=initMap">
+  </script>
+
+</head>
+<body onload="tenLargestQuakes()">
+  
+  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+     
+        
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+
+  <div class="container" style="height:90%">
+
+    <br><br>
+    <div class="starter-template">
+      <h1>Earthquake Finder</h1>
+      
+      
+      
+      <form id="addressForm" onsubmit="event.preventDefault();geoCodeLocation();">
+        <div>
+          <label for="address">Enter a Location:</label>
+          <input type="text"  name="address" id="address" placeholder="Location" size="65%" />
+          <button type="button" class ="btn btn-primary" onclick="event.preventDefault();geoCodeLocation();">Display Results</button>
+        </div>
+      </form>  
+      <br>
+      <center><small>Move the cursos over a pin to show detailed information</small>
+        <br>
+        
+        
+      </div>
+      <div id="map-canvas"/>
+
+      <br>
+      
+    </div>
+    <br>
+
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">Top 10 Earthquakes around the world:</h3>
+      </div>
+      <div class="panel-body">
+        <table class="table">
+         <ol>
+
+          <div id="top-10"/>
+        </ol>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>
